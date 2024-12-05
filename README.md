@@ -24,7 +24,7 @@ Se veia el dataset, se escogia una columna, se veian los valores unicos y finalm
 Al llegar al DataFrame de salarios nos encontramos un problema que decidio el camino del proyecto, muchas de las columnas que teniamos eran inutiles o redundantes, o eso pensamos al menos.
 Cuando llegamos a 'Title Name' vimos como la columna describia todos los 4700+ nombres de los empleos que podias encontrar en el estado, esto ocasiono muchos problemas debido a la dificultad que era mapearlo y hasta la fecha el diccionario que se creo para poder cumplir esto mide mas de la mitad del proyecto.
 
-![2.png](attachment:2.png)
+Resources/2.png
 
 Pensamos en que muchas de las columnas podian ser ignoradas, o que podriamos escoger mejor solo las columnas que podriamos necesitar y de ahi implementar lo demas.
 
@@ -39,7 +39,7 @@ Y o dios no sabiamos que lo ibamos a necesitar.
 Nuestra aventura con spark inicio facil, se creaba una SparkSession, se escogia un dataset y experimentabamos que era lo que se podia utilizar.
 De lo que mas hicimos uso fue del Schema que este incluia
 
-![3.png](attachment:3.png)
+Resources/3.png
 
 El poder ver la informacion del dataset de esta manera fue completamente una bendicion debido a que podiamos escoger que teniamos que limpiar y como.
 Pero en general empezabamos a ver todo lo que podiamos lograr. Usabamos las herramientas de sql para crear nuevos dataframes, los modificabamos al gusto, principalmente por 'Year' y nos ayudaba a ver que conclusiones podiamos sacar.
@@ -54,7 +54,7 @@ Pero al momento de llegar a los crimenes totales, decidimos usar graficos mas se
 
 Y despues de muchoo tiempo conseguimos nuestra primera conclusion. 
 
-![4.png](attachment:4.png)
+Resources/4.png
 
 "Relacion entre Delitos Totales y Promedios de Sueldos"
 
@@ -66,7 +66,7 @@ Despues empezamos a experimentar mas con los otros datasets que teniamos, hate c
 Se utilizaron los mismos metodos para las tablas y sus relaciones.
 Al principio se intento probar si la educacion tenia algo que ver con los crimenes de odio que las personas generaban.
 
-![5.png](attachment:5.png)
+Resources/5.png
 
 Esta imagen es importante porque muestra el como ciertos condados de New York tienen muchos mas crimenes de odio que los demas, lo cual debe tener un motivo debido a que uno pensaria que seria mas equitativo.
 
@@ -80,18 +80,18 @@ Sera que la cantidad y calidad de educacion por condado influye en lo anterior?
 Pues si...
 Pero no para lo que teniamos en mente.
 
-![6.png](attachment:6.png)
+Resources/6.png
 
-![7.png](attachment:7.png)
+Resources/7.png
 
-![8.png](attachment:8.png)
+Resources/8.png
 
 Veran, estas imagenes son comparaciones de las graficas de la cantidad de graduados ya sea en universidades publicas, tecnologicas, entre otras, contra los crimenes de odio en esos mismos condados.
 En algunas no se puede apreciar bien por la diferencia de orden entre los condados y el nombre de las universidades. Pero se puede notar una cosa. Algunas barras son muy similares. Y no solo en una grafica, en varias. 
 Nosotros teniamos pensado que la relacion seria similar a la de los crimenes con el salario. Pero fue lo opuesto. 
 La cantidad de alumnos que se graduaban de una universidad era proporcional a la cantidad de crimenes de odio que habia en el mismo condado.
 
-![9.png](attachment:9.png)
+Resources/9.png
 
 Como podemos apreciar en esta grafica, es muy similar la cantidad que hay de ambos.
 Y esta fue la segunda conclusion que sacamos. 
@@ -105,7 +105,7 @@ Aqui ira una explicacion mas a detalle de todo porque fue lo que mas se nos difi
 
 Lo primero que vamos a encontrar es los importes que utilizamos durante los modelos. SparkSession para usar spark, y los demas para el modelo.
 
-![10.png](attachment:10.png)
+Resources/10.png
 
 Esta parte es muy importante. Originalmente spark no contaba con ninguna configuracion personalizada debido a que no sabiamos que lo ibamos a necesitar. 
 La primera configuracion es para cambiar la carpeta de runtime de spark. Esto es porque al crear el modelo, la carpeta temporal que usaba se quedaba sin espacio muy rapido y no podia continuar el programa. 
@@ -134,14 +134,14 @@ Entonces fuimos probando relacion por relacion. R1 con 1000 datos, R2 con 200000
 
 Y finalmente conseguimos 
 
-![11.png](attachment:11.png)
+Resources/11.png
 
 Pero que significa eso?
 RMSE es el posible error que tiene el modelo con la relacion de los datos. Mientras mas bajo sea el numero, significa que tiene sentido el modelo. Pero que tan bajo es bajo? Pues en otro intento con otros datos el RMSE era de 600 asi que un 4 esta bastante bien.
 El R2: es que tan viable es el modelo escogido para la prediccion que queremos. Cerca de 1 significa muy eficiente. Cerca de 0 significa muy similar a solo sacar el promedio y un numero negativo es que es mucho peor que solo sacar el promedio.
 Luego en la tabla podemos ver los datos. Osea que, por cada victima, por cada persona y por cada persona graduada, nos decia la cantidad de crimenes de odio que deberia haber. Esto nos lleva a la tercera conclusion.
 
-![12.png](attachment:12.png)
+Resources/12.png
 
 La prediccion es muy similar a los valores originales. Esto implica que si hay una relacion directa.
 
@@ -149,7 +149,7 @@ Aqui podemos apreciar un mejor analisis de lo parecido que es.
 
 Finalmente intentamos hacer lo mismo con los suicidios pero debido al como manejamos los datasets.
 
-![13.png](attachment:13.png)
+Resources/13.png
 
 Termino siendo muy diferente a lo esperado. Lo unico que se pudo sacar de ahi es que los crimenes de odio y los suicidios si tienen relacion pero el plan original era ver por raza o etnicidad. 
 
